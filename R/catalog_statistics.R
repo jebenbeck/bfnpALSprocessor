@@ -1,10 +1,16 @@
-
-# Calculate point density of lascatalog files --------------------------------------------------------------------------
-
-
-#' function takes all files in a lascatalog and returns a table with statistics on point density, covex area covered,
-#' extemt, etc.
-
+# Calculate point density of lascatalog files
+#'
+#' @description Takes all files in a lascatalog and returns a table with statistics on point density, covex area covered,
+#' extemt, etc. for every tile
+#'
+#' @param lascatalog Object of class `lascatalog`
+#' @param parallel logical of length 1. Should the computation be split over several cores? Defaults to FALSE.
+#' @param n_cores numeric of length 1. If `parallelize = TRUE`, on how many cores should the computations be run on?
+#' Defaults to the value registered in `options("cores")[[1]]`, or, if this is not available, to `parallel::detectCores())`.
+#'
+#' @examples
+#' ctg <- readALSLAScatalog("/path/to/lazfiles")
+#' catalog_statistics(ctg, TRUE, 3)
 
 catalog_statistics <- function(lascatalog, parallel = F, n_cores = 2){
 
