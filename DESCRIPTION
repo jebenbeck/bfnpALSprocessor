@@ -1,9 +1,9 @@
-Package: Packages
-Title: What the Package Does (One Line, Title Case)
+Package: ALS_processing
+Title: Process ALS data from the Bavarian Forest National Park 
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Jakob", "Ebenbeck", , "jakob@ebenbeck.de", role = c("aut", "cre"))
+Description: Provides functions relevant to process data from airborne laserscanning from various sources to make them available in a structurized and analysis-ready status. Mainly relies on the lidR lascatalog processing engine.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
