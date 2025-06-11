@@ -23,10 +23,10 @@ catalog_statistics <- function(lascatalog, parallel = F, n_cores = 2){
 
   # function to get point density of las data:
   calc_statistics = function(chunk) {
-    las <- readLAS(chunk)
+    las <- lidR::readLAS(chunk)
     if (is.empty(las)) return(NULL)
     # calculate point density:
-    density = density(las)
+    density = lidR::density(las)
     # calculate area covered by convex hull (not bbox):
     area = lidR::area(las)
     # extract tile name from file (for merging information to other data later):
@@ -34,19 +34,19 @@ catalog_statistics <- function(lascatalog, parallel = F, n_cores = 2){
     # extract extent of full tile:
     extent_tile <- chunk@bbox
     # make data frame with necessary information:
-    df <- tibble(Tile.name = tilename,
-                 Point.density = density,
-                 Area.covered = area,
-                 Tile.max.X = extent_tile[1, 2],
-                 Tile.min.X = extent_tile[1, 1],
-                 Tile.max.Y = extent_tile[2, 2],
-                 Tile.min.Y = extent_tile[2, 1])
+    df <- dplyr::tibble(Tile.name = tilename,
+                        Point.density = density,
+                        Area.covered = area,
+                        Tile.max.X = extent_tile[1, 2],
+                        Tile.min.X = extent_tile[1, 1],
+                        Tile.max.Y = extent_tile[2, 2],
+                        Tile.min.Y = extent_tile[2, 1])
     return(df)
   }
 
   # plan parallel processing
   if (parallel == TRUE) {
-    plan(multisession, workers = n_cores)
+    future::plan(multisession, workers = n_cores)
     message(paste("Parallel processing will be used with", n_cores, "cores"))
   } else {
     warning("No parallel processing in use", call. = F, immediate. = T)
