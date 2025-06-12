@@ -21,5 +21,5 @@ forest national park.
 | Dataset id  | status           | current step                  |
 |-------------|------------------|-------------------------------|
 | **2023-07** | almost done      | normalization                 |
-| **2017-06** | finished         | backup creation               |
+| **2017-06** | finished         | \-                            |
 | **2012-06** | work in progress | calculating number of returns |
