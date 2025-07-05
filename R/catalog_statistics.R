@@ -7,7 +7,8 @@
 #' @param parallel logical of length 1. Should the computation be split over several cores? Defaults to FALSE.
 #' @param n_cores numeric of length 1. If `parall = TRUE`, on how many cores should the computations be run on?
 #' Defaults to the value registered in `options("cores")[[1]]`, or, if this is not available, to `parallel::detectCores())`.
-#'
+#' @param spatial logical of length 1. Should the output be a spatial dataset (sf) with polygons representing the
+#' catalog tiles?
 #' @return data frame
 #' @export
 #'
@@ -56,4 +57,17 @@ catalog_statistics <- function(lascatalog, parallel = F, n_cores = 2){
   statistics <- catalog_apply(lascatalog, calc_statistics)
   # merge the results to a single data frame:
   statistics_merged_df <- bind_rows(statistics)
+
+  if (spatial == TRUE) {
+    # convert catalog to polygons:
+    ctg_polygons <- catalog_to_polygons(lascatalog)
+
+    #' merge the data:
+    ctg_polygons_stats <- left_join(ctg_polygons, statistics_merged_df) %>%
+      relocate(c(Point.density, Area.covered), .after = Tile.name) %>%
+      relocate(c(Tile.max.X, Tile.min.X, Tile.max.Y, Tile.min.Y), .after = Min.Z)
+
+    return(ctg_polygons_stats)
+
+  }
 }

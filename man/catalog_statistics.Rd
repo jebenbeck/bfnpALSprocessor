@@ -13,6 +13,9 @@ catalog_statistics(lascatalog, parallel = F, n_cores = 2)
 
 \item{n_cores}{numeric of length 1. If \code{parall = TRUE}, on how many cores should the computations be run on?
 Defaults to the value registered in \code{options("cores")[[1]]}, or, if this is not available, to \verb{parallel::detectCores())}.}
+
+\item{spatial}{logical of length 1. Should the output be a spatial dataset (sf) with polygons representing the
+catalog tiles?}
 }
 \value{
 data frame
@@ -24,4 +27,5 @@ extemt, etc. for every tile
 \examples{
 ctg <- readALSLAScatalog("/path/to/lazfiles")
 catalog_statistics(ctg, TRUE, 3)
+merge the data:
 }
