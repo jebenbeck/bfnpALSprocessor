@@ -16,7 +16,7 @@
 #' ctg <- readALSLAScatalog("/path/to/lazfiles")
 #' catalog_statistics(ctg, TRUE, 3)
 
-catalog_statistics <- function(lascatalog, parallel = F, n_cores = 2){
+catalog_statistics <- function(lascatalog, parallel = F, n_cores = 2, spatial = FALSE){
 
   # set catalog options:
   opt_select(lascatalog) <- "xy" # read only xy because they are the only attributes of interest
@@ -54,20 +54,24 @@ catalog_statistics <- function(lascatalog, parallel = F, n_cores = 2){
   }
 
   # apply function to catalog:
-  statistics <- catalog_apply(lascatalog, calc_statistics)
+  statistics <- lidR::catalog_apply(lascatalog, calc_statistics)
   # merge the results to a single data frame:
-  statistics_merged_df <- bind_rows(statistics)
+  statistics_merged_df <- dplyr::bind_rows(statistics)
 
   if (spatial == TRUE) {
     # convert catalog to polygons:
     ctg_polygons <- catalog_to_polygons(lascatalog)
 
     #' merge the data:
-    ctg_polygons_stats <- left_join(ctg_polygons, statistics_merged_df) %>%
-      relocate(c(Point.density, Area.covered), .after = Tile.name) %>%
-      relocate(c(Tile.max.X, Tile.min.X, Tile.max.Y, Tile.min.Y), .after = Min.Z)
+    ctg_polygons_stats <- dplyr::left_join(ctg_polygons, statistics_merged_df) %>%
+      dplyr::relocate(c(Point.density, Area.covered), .after = Tile.name) %>%
+      dplyr::relocate(c(Tile.max.X, Tile.min.X, Tile.max.Y, Tile.min.Y), .after = Min.Z)
 
     return(ctg_polygons_stats)
 
+  }
+
+  if (spatial == FALSE) {
+    return(statistics_merged_df)
   }
 }

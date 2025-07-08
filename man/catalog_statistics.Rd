@@ -4,7 +4,7 @@
 \alias{catalog_statistics}
 \title{Calculate point density of lascatalog files}
 \usage{
-catalog_statistics(lascatalog, parallel = F, n_cores = 2)
+catalog_statistics(lascatalog, parallel = F, n_cores = 2, spatial = FALSE)
 }
 \arguments{
 \item{lascatalog}{Object of class \code{lascatalog}}
