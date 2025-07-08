@@ -1,4 +1,4 @@
-#' Calculate point density of lascatalog files
+#' Calculate statistics on lascatalog files
 #'
 #' @description Takes all files in a lascatalog and returns a table with statistics on point density, covex area covered,
 #' extemt, etc. for every tile

@@ -2,7 +2,7 @@
 % Please edit documentation in R/catalog_statistics.R
 \name{catalog_statistics}
 \alias{catalog_statistics}
-\title{Calculate point density of lascatalog files}
+\title{Calculate statistics on lascatalog files}
 \usage{
 catalog_statistics(lascatalog, parallel = F, n_cores = 2, spatial = FALSE)
 }
