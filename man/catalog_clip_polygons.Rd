@@ -40,7 +40,9 @@ The files are named after an attribute in the input polygon dataset.
 }
 \examples{
 ctg <- readALSLAScatalog("/path/to/lazfiles")
-catalog_statistics(ctg, TRUE, 3)
+reference_areas <- st_read("/path/to/polygons")
+catalog_clip_polygons (ctg_UTM32_retiled, input_epsg = "EPSG:25832", output_path = "E:/ALS 2017/Reference_areas",
+filename_convention = "reference_area_{transect_id}_{transect_name}", polygons = Reference_areas)
 check projection if needed:
 apply options to lascatalog
 plan parallel processing

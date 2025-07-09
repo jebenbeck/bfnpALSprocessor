@@ -77,8 +77,8 @@ After doing that for the first time, R needs to be restarted to apply these chan
 You only need to set up this once on your system, afterwards the code will work properly. The function will check for you if the settings are okay and the grid file exists at the correct place.
 }
 \examples{
-
-Insert example here
+ctg <- readALSLAScatalog("/path/to/lazfiles")
+catalog_reproject(lascatalog = ctg, input_epsg = "EPSG:31468", output_epsg = "EPSG:25832", output_path = "path/to/output", parallel = TRUE, n_cores = 3)
 check projection if needed:
 apply options to lascatalog
 special check if transformation is from GK4 to UTM32

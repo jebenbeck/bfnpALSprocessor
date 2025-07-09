@@ -56,8 +56,8 @@
 #' @export
 #'
 #' @examples
-#'
-#' Insert example here
+#' ctg <- readALSLAScatalog("/path/to/lazfiles")
+#' catalog_reproject(lascatalog = ctg, input_epsg = "EPSG:31468", output_epsg = "EPSG:25832", output_path = "path/to/output", parallel = TRUE, n_cores = 3)
 
 catalog_reproject <- function(lascatalog, input_epsg, output_epsg, output_path, parallel = FALSE, n_cores = 2)  {
 
