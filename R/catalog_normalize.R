@@ -6,7 +6,7 @@
 #' @param algorithm (1) An algorithm used for spatial interpolation of the point cloud data, uses the ones available
 #' via [lidR::normalize_height()] or (2) the character vector "dtm" when a dtm is available and should be used. Defaults
 #' to tin().
-#' @param dtm_path character path pointing to raster dataset representing the DTM of the covered area
+#' @param dtm object of type `rast` representing a digital terrain model. See [terra::rast()]
 #' @param output_path character path to the folder where the new files should be exported to
 #' @param filename_convention character defining the filenames of the generated laz files following lidR basics. Defaults
 #' to the original filename
@@ -22,15 +22,8 @@
 #' filename_convention = "{ORIGINALFILENAME}", parallel = F, n_cores = 1)
 
 
-catalog_normalize <- function(lascatalog, algorithm = tin(), dtm_path = NULL, output_path, filename_convention = "{ORIGINALFILENAME}",
+catalog_normalize <- function(lascatalog, algorithm = tin(), dtm = NULL, output_path, filename_convention = "{ORIGINALFILENAME}",
                               parallel = FALSE, n_cores = 2){
-
-  #' load dtm data
-  if (algorithm == "dtm") {
-    message("loading dtm...")
-    dtm <- terra::rast(dtm_path)
-    message("loading dtm finished")
-  }
 
   #' apply options to lascatalog
   opt_output_files(lascatalog) <- paste0(output_path, "/", filename_convention)
