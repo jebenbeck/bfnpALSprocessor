@@ -7,7 +7,7 @@
 catalog_normalize(
   lascatalog,
   algorithm = tin(),
-  dtm = NULL,
+  dtm_path = NULL,
   output_path,
   filename_convention = "{ORIGINALFILENAME}",
   parallel = FALSE,
@@ -21,7 +21,7 @@ catalog_normalize(
 via \code{\link[lidR:normalize]{lidR::normalize_height()}} or (2) the character vector "dtm" when a dtm is available and should be used. Defaults
 to tin().}
 
-\item{dtm}{object of type \code{rast} representing a digital terrain model. See \code{\link[terra:rast]{terra::rast()}}}
+\item{dtm_path}{character path to the raster file representing the dtm. File should be readable by \code{\link[terra:rast]{terra::rast()}}}
 
 \item{output_path}{character path to the folder where the new files should be exported to}
 
@@ -41,7 +41,7 @@ This function normalizes point clouds to receive the height above ground as a ad
 }
 \examples{
 ctg <- readALSLAScatalog("/path/to/lazfiles")
-ctg_normalized <- catalog_normalize(ctg, dtm_path = "D:/dtm_mosaic.tif", output_path = "D:/6_pointclouds_normalized",
+ctg_normalized <- catalog_normalize(ctg, algorithm = tin(), output_path = "D:/6_pointclouds_normalized",
 filename_convention = "{ORIGINALFILENAME}", parallel = F, n_cores = 1)
 apply options to lascatalog
 function to normalize pointclouds::

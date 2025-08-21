@@ -6,7 +6,7 @@
 #' @param algorithm (1) An algorithm used for spatial interpolation of the point cloud data, uses the ones available
 #' via [lidR::normalize_height()] or (2) the character vector "dtm" when a dtm is available and should be used. Defaults
 #' to tin().
-#' @param dtm object of type `rast` representing a digital terrain model. See [terra::rast()]
+#' @param dtm_path character path to the raster file representing the dtm. File should be readable by [terra::rast()]
 #' @param output_path character path to the folder where the new files should be exported to
 #' @param filename_convention character defining the filenames of the generated laz files following lidR basics. Defaults
 #' to the original filename
@@ -18,11 +18,11 @@
 #'
 #' @examples
 #' ctg <- readALSLAScatalog("/path/to/lazfiles")
-#' ctg_normalized <- catalog_normalize(ctg, dtm_path = "D:/dtm_mosaic.tif", output_path = "D:/6_pointclouds_normalized",
+#' ctg_normalized <- catalog_normalize(ctg, algorithm = tin(), output_path = "D:/6_pointclouds_normalized",
 #' filename_convention = "{ORIGINALFILENAME}", parallel = F, n_cores = 1)
 
 
-catalog_normalize <- function(lascatalog, algorithm = tin(), dtm = NULL, output_path, filename_convention = "{ORIGINALFILENAME}",
+catalog_normalize <- function(lascatalog, algorithm = tin(), dtm_path = NULL, output_path, filename_convention = "{ORIGINALFILENAME}",
                               parallel = FALSE, n_cores = 2){
 
   #' apply options to lascatalog
@@ -39,6 +39,7 @@ catalog_normalize <- function(lascatalog, algorithm = tin(), dtm = NULL, output_
   normalize = function(las){
     #' normalize the data:
     if (algorithm == "dtm") {
+      dtm <- terra::rast(dtm_path)
       las_normalized <- lidR::normalize_height(las, algorithm = dtm)
     } else {
       las_normalized <- lidR::normalize_height(las, algorithm = algorithm)
