@@ -46,7 +46,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">catalog_normalize</span><span class="op">(</span></span>
 <span>  <span class="va">lascatalog</span>,</span>
 <span>  algorithm <span class="op">=</span> <span class="fu">tin</span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  dtm <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  dtm_path <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  <span class="va">output_path</span>,</span>
 <span>  filename_convention <span class="op">=</span> <span class="st">"{ORIGINALFILENAME}"</span>,</span>
 <span>  parallel <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -68,8 +68,8 @@ via <code><a href="https://rdrr.io/pkg/lidR/man/normalize.html" class="external-
 to tin().</p></dd>
 
 
-<dt id="arg-dtm">dtm<a class="anchor" aria-label="anchor" href="#arg-dtm"></a></dt>
-<dd><p>object of type <code>rast</code> representing a digital terrain model. See <code><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">terra::rast()</a></code></p></dd>
+<dt id="arg-dtm-path">dtm_path<a class="anchor" aria-label="anchor" href="#arg-dtm-path"></a></dt>
+<dd><p>character path to the raster file representing the dtm. File should be readable by <code><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">terra::rast()</a></code></p></dd>
 
 
 <dt id="arg-output-path">output_path<a class="anchor" aria-label="anchor" href="#arg-output-path"></a></dt>
