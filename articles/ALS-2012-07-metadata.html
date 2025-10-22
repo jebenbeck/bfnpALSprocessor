@@ -58,7 +58,7 @@
 
       <h1>ALS 2012-07 metadata</h1>
             
-            <h4 data-toc-skip class="date">2025-08-21</h4>
+            <h4 data-toc-skip class="date">2025-10-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jebenbeck/bfnpALSprocessor/blob/main/vignettes/articles/ALS-2012-07-metadata.Rmd" class="external-link"><code>vignettes/articles/ALS-2012-07-metadata.Rmd</code></a></small>
       <div class="d-none name"><code>ALS-2012-07-metadata.Rmd</code></div>
@@ -68,13 +68,20 @@
     
 <hr>
 <div class="section level2">
-<h2 id="description-of-the-2012-07-dataset">Description of the 2012-07 dataset:<a class="anchor" aria-label="anchor" href="#description-of-the-2012-07-dataset"></a>
+<h2 id="dataset-description">Dataset description<a class="anchor" aria-label="anchor" href="#dataset-description"></a>
 </h2>
 <ul>
 <li>Acquisition dates: 24..7.2012, 26.07.2012, 27.07.2012</li>
 <li>Company: MILAN Geoservice GmbH</li>
 <li>Spatial coverage: full Bavarian Forest National Park (as of
 2012)</li>
+<li>Sensor:</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="description-of-the-original-2012-07-dataset">Description of the original 2012-07 dataset:<a class="anchor" aria-label="anchor" href="#description-of-the-original-2012-07-dataset"></a>
+</h2>
+<ul>
 <li>File format of the point cloud: *.asc</li>
 <li>File size of point cloud (total): 574 gb</li>
 <li>Tiling:
@@ -84,7 +91,7 @@
 </ul>
 </li>
 <li>Coordinate system: GK4 (EPSG:31468)</li>
-<li>Vertical datum: unknown</li>
+<li>Vertical datum: DHHN12</li>
 </ul>
 <p>The attributes of the original text files could be identified by
 metadata descriptions and contacting MILAN:</p>
@@ -122,27 +129,27 @@ metadata descriptions and contacting MILAN:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level2">
-<h2 id="processing-pipeline">Processing pipeline<a class="anchor" aria-label="anchor" href="#processing-pipeline"></a>
-</h2>
 <div class="section level3">
-<h3 id="convert-data-to-laz">Convert data to laz<a class="anchor" aria-label="anchor" href="#convert-data-to-laz"></a>
+<h3 id="processing-pipeline">Processing pipeline<a class="anchor" aria-label="anchor" href="#processing-pipeline"></a>
 </h3>
+<div class="section level4">
+<h4 id="convert-data-to-laz">Convert data to laz<a class="anchor" aria-label="anchor" href="#convert-data-to-laz"></a>
+</h4>
 <p>To save disk space and to be able to use the lidR package, all
 individual tiles were converted from the original ASC format to LAZ
 format. Hereby, all attributes were named accordingly to the las naming
 conventions. The “pulsewidth” however is not a part of that and was
 therefore added as an extra, user-defined attribute.</p>
 </div>
-<div class="section level3">
-<h3 id="add-number-of-returns">Add number of returns<a class="anchor" aria-label="anchor" href="#add-number-of-returns"></a>
-</h3>
+<div class="section level4">
+<h4 id="add-number-of-returns">Add number of returns<a class="anchor" aria-label="anchor" href="#add-number-of-returns"></a>
+</h4>
 <p>The attribute “number of returns” is missing. However, it is
 important as it defines the number of the last return for each pulse, a
 metric that is needed for the calculation of DTMs for example. So, this
 attribute is calculated and added according to the las naming
 convention.</p>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
