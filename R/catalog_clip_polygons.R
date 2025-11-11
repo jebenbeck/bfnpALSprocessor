@@ -43,7 +43,7 @@ catalog_clip_polygons <- function(lascatalog, input_epsg, output_path, filename_
 
   #' plan parallel processing
   if (parallel == TRUE) {
-    plan(multisession, workers = n_cores)
+    future::plan(multisession, workers = n_cores)
     message(paste("Parallel processing will be used with", n_cores, "cores"))
   } else {
     warning("No parallel processing in use", call. = F, immediate. = T)
