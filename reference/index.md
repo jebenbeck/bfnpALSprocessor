@@ -1,0 +1,18 @@
+# Package index
+
+## All functions
+
+- [`catalog_clip_polygons()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_clip_polygons.md)
+  : Calculate statistics on lascatalog files
+- [`catalog_filter()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_filter.md)
+  : Filter point clouds
+- [`catalog_normalize()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_normalize.md)
+  : Normalize point clouds
+- [`catalog_reproject()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_reproject.md)
+  : Reproject lascatalog
+- [`catalog_retile_template()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_retile_template.md)
+  : Retile lascatalog
+- [`catalog_statistics()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_statistics.md)
+  : Calculate statistics on lascatalog files
+- [`catalog_to_polygons()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_to_polygons.md)
+  : Generate footprint polygons of lascatalog objects

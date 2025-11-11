@@ -1,0 +1,46 @@
+# ALS 2012-07 metadata
+
+------------------------------------------------------------------------
+
+## Dataset description
+
+- Acquisition dates: 24.7.2012, 26.07.2012, 27.07.2012
+- Company: MILAN Geoservice GmbH
+- Spatial coverage: full Bavarian Forest National Park (as of 2012)
+- Sensor:
+
+## Description of the original 2012-07 dataset:
+
+- File format of the point cloud: \*.asc
+- File size of point cloud (total): 574 gb
+- Tiling:
+  - number of tiles: 1102
+  - seperation by flightpath (tiles are overlapping)
+- Coordinate system: GK4 (EPSG:31468)
+- Vertical datum: DHHN12
+
+The attributes of the original text files could be identified by
+metadata descriptions and contacting MILAN:
+
+|                 |     |     |     |            |           |               |          |
+|-----------------|-----|-----|-----|------------|-----------|---------------|----------|
+| **Attribute**   | V1  | V2  | V3  | V4         | V5        | V6            | V7       |
+| **Description** | X   | Y   | Z   | Pulsewidth | Intensity | Return-number | GPS-time |
+
+### Processing pipeline
+
+#### Convert data to laz
+
+To save disk space and to be able to use the lidR package, all
+individual tiles were converted from the original ASC format to LAZ
+format. Hereby, all attributes were named accordingly to the las naming
+conventions. The “pulsewidth” however is not a part of that and was
+therefore added as an extra, user-defined attribute.
+
+#### Add number of returns
+
+The attribute “number of returns” is missing. However, it is important
+as it defines the number of the last return for each pulse, a metric
+that is needed for the calculation of DTMs for example. So, this
+attribute is calculated and added according to the las naming
+convention.
