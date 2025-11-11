@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 
 # Dataset description
-- Acquisition dates: 24..7.2012, 26.07.2012, 27.07.2012
+- Acquisition dates: 24.7.2012, 26.07.2012, 27.07.2012
 - Company: MILAN Geoservice GmbH
 - Spatial coverage: full Bavarian Forest National Park (as of 2012)
 - Sensor:
