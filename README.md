@@ -16,6 +16,9 @@ This package includes the functions used and a full documentation of all
 the processing steps applied to the available ALS data in the Bavarian
 forest national park.
 
+Install this package using
+`devtools::install_github("jebenbeck/bfnpALSprocessor", dependencies = T)`
+
 # Current status of processing:
 
 | Dataset id  | status           | current step                  |
