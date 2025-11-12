@@ -26,13 +26,14 @@ catalog_normalize <- function(lascatalog, algorithm = tin(), dtm_path = NULL, ou
                               parallel = FALSE, n_cores = 2){
 
   #' apply options to lascatalog
-  opt_output_files(lascatalog) <- paste0(output_path, "/", filename_convention)
-  opt_laz_compression(lascatalog) <- TRUE
+  lidR::opt_output_files(lascatalog) <- paste0(output_path, "/", filename_convention)
+  lidR::opt_laz_compression(lascatalog) <- TRUE
+
   if (algorithm == "dtm") {
-    opt_independent_files(lascatalog) <- TRUE
+    lidR::opt_independent_files(lascatalog) <- TRUE
   } else {
-    opt_chunk_buffer(lascatalog) <- 10
-    opt_chunk_size(lascatalog) <- 0
+    lidR::opt_chunk_buffer(lascatalog) <- 10
+    lidR::opt_chunk_size(lascatalog) <- 0
   }
 
   #' function to normalize pointclouds::
