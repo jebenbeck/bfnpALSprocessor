@@ -2,6 +2,8 @@
 
 ## All functions
 
+- [`catalog_classify_ground()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_classify_ground.md)
+  : Classify ground points
 - [`catalog_clip_polygons()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_clip_polygons.md)
   : Calculate statistics on lascatalog files
 - [`catalog_filter()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_filter.md)
