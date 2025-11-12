@@ -40,9 +40,11 @@ lascatalog
 This function normalizes point clouds to receive the height above ground as a additional attribute
 }
 \examples{
+#' \dontrun{
 ctg <- readALSLAScatalog("/path/to/lazfiles")
 ctg_normalized <- catalog_normalize(ctg, algorithm = tin(), output_path = "D:/6_pointclouds_normalized",
 filename_convention = "{ORIGINALFILENAME}", parallel = F, n_cores = 1)
+}
 apply options to lascatalog
 function to normalize pointclouds::
 normalize the data:

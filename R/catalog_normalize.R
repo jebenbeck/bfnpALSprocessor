@@ -17,10 +17,11 @@
 #' @export
 #'
 #' @examples
+#' #' \dontrun{
 #' ctg <- readALSLAScatalog("/path/to/lazfiles")
 #' ctg_normalized <- catalog_normalize(ctg, algorithm = tin(), output_path = "D:/6_pointclouds_normalized",
 #' filename_convention = "{ORIGINALFILENAME}", parallel = F, n_cores = 1)
-
+#' }
 
 catalog_normalize <- function(lascatalog, algorithm = tin(), dtm_path = NULL, output_path, filename_convention = "{ORIGINALFILENAME}",
                               parallel = FALSE, n_cores = 2){
