@@ -29,7 +29,7 @@
 #' In order to use grid-based transformations, [sf::st_transform()] needs to have access to the grid file in `.tif` format.
 #' There are two options to make that work:
 #' 1) accessing the file through the web via \href{https://cdn.proj.org/}{PROJ.org Datumgrid CDN}
-#' 2) downloading the file and putting it into your local library \n
+#' 2) downloading the file and putting it into your local library
 #' To make it usable as the `lidR` default method, we actually have to set up both. In know it's weird but it is what it is.
 #'
 #' Enabling the web-service can be done by calling `sf_proj_network(enable = T)`. Afterwards, check, which method is default by calling
