@@ -17,9 +17,11 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' ctg <- readALSLAScatalog("/path/to/lazfiles")
 #' ctg_classified <- catalog_normalize(ctg, algorithm = lidR::csf(), last_returns = T,
 #' output_path = "D:/6_pointclouds_classified", filename_convention = "{ORIGINALFILENAME}", parallel = F, n_cores = 1)
+#' }
 
 catalog_classify_ground <- function(lascatalog, algorithm = lidR::csf(), last_returns = T, output_path,
                                     filename_convention = "{ORIGINALFILENAME}", parallel = FALSE, n_cores =2) {

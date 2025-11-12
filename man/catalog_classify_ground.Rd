@@ -40,9 +40,11 @@ This function classifies ground points in ALS point clouds. It essentially is th
 but has pre-defined options optimized for the BFNP ALS data.
 }
 \examples{
+\dontrun{
 ctg <- readALSLAScatalog("/path/to/lazfiles")
 ctg_classified <- catalog_normalize(ctg, algorithm = lidR::csf(), last_returns = T,
 output_path = "D:/6_pointclouds_classified", filename_convention = "{ORIGINALFILENAME}", parallel = F, n_cores = 1)
+}
 apply options to lascatalog
 plan parallel processing
 classify lascatalog:
