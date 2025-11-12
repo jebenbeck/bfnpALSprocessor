@@ -6,6 +6,8 @@
   : Classify ground points
 - [`catalog_clip_polygons()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_clip_polygons.md)
   : Calculate statistics on lascatalog files
+- [`catalog_dtm()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_dtm.md)
+  : DTM creation
 - [`catalog_filter()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_filter.md)
   : Filter point clouds
 - [`catalog_normalize()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_normalize.md)
