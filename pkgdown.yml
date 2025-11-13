@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   articles/ALS-2012-07-metadata: ALS-2012-07-metadata.html
   articles/Process-2023-07-ALS-data: Process-2023-07-ALS-data.html
-last_built: 2025-11-12T16:20Z
+last_built: 2025-11-13T12:03Z
 urls:
   reference: https://jebenbeck.github.io/bfnpALSprocessor/reference
   article: https://jebenbeck.github.io/bfnpALSprocessor/articles
