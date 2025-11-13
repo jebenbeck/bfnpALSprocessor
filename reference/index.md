@@ -5,7 +5,8 @@
 - [`aa_create_boxplots()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/aa_create_boxplots.md)
   : Assess the accuracy of a set of ground control points with boxplots
 - [`aa_metrics()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/aa_metrics.md)
-  : Assess the accuracy of a set of ground control points with boxplots
+  : Assess the accuracy of a set of ground control points by calculating
+  metrics
 - [`catalog_classify_ground()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_classify_ground.md)
   : Classify ground points
 - [`catalog_clip_polygons()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_clip_polygons.md)

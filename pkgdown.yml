@@ -3,7 +3,7 @@ pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   articles/ALS-2012-07-metadata: ALS-2012-07-metadata.html
-last_built: 2025-11-13T13:22Z
+last_built: 2025-11-13T13:34Z
 urls:
   reference: https://jebenbeck.github.io/bfnpALSprocessor/reference
   article: https://jebenbeck.github.io/bfnpALSprocessor/articles
