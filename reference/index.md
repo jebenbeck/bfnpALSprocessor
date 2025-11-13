@@ -22,3 +22,6 @@
   : subset lascatalogs
 - [`catalog_to_polygons()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/catalog_to_polygons.md)
   : Generate footprint polygons of lascatalog objects
+- [`prepare_GCPs()`](https://jebenbeck.github.io/bfnpALSprocessor/reference/prepare_GCPs.md)
+  : Prepare ground control points derived in cloud compare for further
+  analysis
