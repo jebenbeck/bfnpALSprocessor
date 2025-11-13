@@ -1,4 +1,4 @@
-#' Assess the accuracy of a set of ground control points with boxplots
+#' Assess the accuracy of a set of ground control points by calculating metrics
 #'
 #' @description This function takes the output of `merge_gcps()` and provides accuracy metrics for the differences per gcp in X,Y,Z directions
 #' per site

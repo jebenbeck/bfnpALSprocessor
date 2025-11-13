@@ -2,7 +2,7 @@
 % Please edit documentation in R/aa_metrics.R
 \name{aa_metrics}
 \alias{aa_metrics}
-\title{Assess the accuracy of a set of ground control points with boxplots}
+\title{Assess the accuracy of a set of ground control points by calculating metrics}
 \usage{
 aa_metrics(gcp_data, export = F, filename, output_path)
 }
