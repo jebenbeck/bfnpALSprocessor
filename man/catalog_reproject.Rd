@@ -61,7 +61,7 @@ In order to use grid-based transformations, \code{\link[sf:st_transform]{sf::st_
 There are two options to make that work:
 \enumerate{
 \item accessing the file through the web via \href{https://cdn.proj.org/}{PROJ.org Datumgrid CDN}
-\item downloading the file and putting it into your local library \n
+\item downloading the file and putting it into your local library
 To make it usable as the \code{lidR} default method, we actually have to set up both. In know it's weird but it is what it is.
 }
 
