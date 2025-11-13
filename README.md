@@ -27,3 +27,6 @@ terra (\>= 1.8.10), tools (\>= 4.4.1), yardstick (\>= 1.3.2)
 
 All functions can be seen here:
 <https://jebenbeck.github.io/bfnpALSprocessor/reference/index.html>
+
+The processing pipelines applied can be found here:
+<https://github.com/jebenbeck/bfnpALSprocessor/tree/main/processing%20pipelines%20R>
