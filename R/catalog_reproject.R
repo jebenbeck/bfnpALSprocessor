@@ -93,6 +93,7 @@ catalog_reproject <- function(lascatalog, input_epsg, output_epsg, output_path, 
   #' function to reproject las data:
   reproject = function(las){
     las_trans = sf::st_transform(las, crs = output_epsg)
+    crs(las_trans) <- output_epsg
     return(las_trans)
   }
 
